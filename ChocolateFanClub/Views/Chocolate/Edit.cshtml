@@ -1,0 +1,44 @@
+﻿@using ChocolateFanClub.Data.Enum
+@using ChocolateFanClub.ViewModels
+@model EditChocolateViewModel
+
+<h1>Enter your new values for this entry.</h1>
+
+
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="mb-3">
+        <input type="hidden" id="TastyId" name="TastyId" asp-for="TastyId" />
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control" aria-describedby="emailHelp" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Rating" class="form-label">Rating</label>
+        <select asp-for="Rating" asp-items="@Html.GetEnumSelectList<Rating>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Price</label>
+        <input asp-for="Price" class="form-control" aria-describedby="emailHelp" placeholder="Price">
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Company" class="form-label">City</label>
+        <input asp-for="Company" class="form-control" aria-describedby="emailHelp" placeholder="Company">
+        <span asp-validation-for="Company" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Image</label>
+        <input asp-for="Image" class="form-control" type="file" aria-describedby="emailHelp" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

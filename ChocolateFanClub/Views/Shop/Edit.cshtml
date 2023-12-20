@@ -1,0 +1,38 @@
+﻿@using ChocolateFanClub.Data.Enum
+@using ChocolateFanClub.ViewModels
+@model EditShopViewModel
+
+<h1>Enter your new values for this entry.</h1>
+
+
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="mb-3">
+        <input type="hidden" id="ExpensiveId" name="ExpensiveId" asp-for="ExpensiveId" />
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control" aria-describedby="emailHelp" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label">Location</label>
+        <input asp-for="Location" class="form-control" aria-describedby="emailHelp" placeholder="Location">
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Expensive.IsExpensive" class="form-label">How Expensive?</label>
+        <input asp-for="Expensive.IsExpensive" class="form-control" aria-describedby="emailHelp" placeholder="Expensive">
+        <span asp-validation-for="Expensive.IsExpensive" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Image</label>
+        <input asp-for="Image" class="form-control" type="file" aria-describedby="emailHelp" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

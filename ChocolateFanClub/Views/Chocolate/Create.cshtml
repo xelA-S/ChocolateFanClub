@@ -1,0 +1,37 @@
+﻿@using ChocolateFanClub.Data.Enum
+@using ChocolateFanClub.ViewModels
+@model CreateChocolateViewModel
+
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control" aria-describedby="emailHelp" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Rating" class="form-label">Club Category</label>
+        <select asp-for="Rating" asp-items="@Html.GetEnumSelectList<Rating>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tasty.IsTasty" class="form-label">Street</label>
+        <input asp-for="Tasty.IsTasty" class="form-control" aria-describedby="emailHelp" placeholder="IsTasty">
+        <span asp-validation-for="Tasty.IsTasty" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Image</label>
+        <input asp-for="Image" class="form-control" type="file" aria-describedby="emailHelp" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

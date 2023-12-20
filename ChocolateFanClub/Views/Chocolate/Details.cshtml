@@ -1,0 +1,177 @@
+﻿@model Chocolate
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var rating = (int)Model.Rating;
+    
+}
+
+<div class="main-container">
+    <nav aria-label="breadcrumb" role="navigation" class="bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="pages-app.html">Find</a>
+                        </li>
+
+                    </ol>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </nav>
+</div>
+<section class="bg-white space-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mb-4 mb-sm-0">
+                <h1 class="mb-3">@Model.Name</h1>
+
+                <img alt="Image" src="@Model.ChocolateImageUrl" class="rounded img-fluid" />
+            </div>
+            <!--end of col-->
+            <div class="col-lg-4 d-flex flex-column justify-content-between ">
+                <div>
+                    <div>
+                        <ul class="list-inline text-small d-inline-block mb-3">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end of col-->
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<!--end of section-->
+<section class="space-sm">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-8 col-lg-7">
+                <h5 class="mb-4">Overview</h5>
+                <article>
+                    @Model.Description
+                </article>
+                <hr>
+                <h5 class="mb-4 mt-2">Price</h5>
+                <article>
+                    £@Model.Price
+                </article>
+                <hr>
+                <h5 class="mb-4 mt-2">Rating</h5>
+                <article>
+                    @rating/10
+                </article>
+                <!--Add Post feature here-->
+                @*
+                <hr>
+                <h5 class="mb-4">Discussion</h5>
+                <div class="card">
+                    <div class="card-header bg-secondary d-flex justify-content-between">
+                        <button class="btn btn-secondary" type="button" data-target="#comment-reply" data-toggle="collapse" aria-expanded="false" aria-controls="comment-reply">Post a reply</button>
+                        <form class="d-flex align-items-center">
+                            <span class="mr-2 text-muted text-small text-nowrap">Sort by:</span>
+                            <select class="custom-select">
+                                <option value="alpha">Alphabetical</option>
+                                <option value="old-new" selected>Newest</option>
+                                <option value="new-old">Popular</option>
+                                <option value="recent">Recently Updated</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="collapse" id="comment-reply">
+                        <form class="card-body">
+                            <div class="form-group">
+                                <textarea class="form-control from-control-lg" id="comment-reply-text" name="comment-reply" rows="4" placeholder="Type your reply here"></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="notify-reply" id="check-notify">
+                                    <label class="custom-control-label text-small" for="check-notify">Notify me when someone replies</label>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button type="submit" class="btn btn-success mr-3">Submit reply</button>
+                                <a href="#comment-reply" class="text-small text-muted" data-toggle="collapse" aria-expanded="true" aria-controls="comment-reply">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="list-group list-group-flush list-group-comments">
+                        <li class="list-group-item py-4">
+                            <div class="media">
+                                <img alt="Image" src="assets/img/avatar-female-2.jpg" class="avatar avatar-sm" />
+                                    <div class="media-body">
+                                        <div class="mb-2">
+                                        <span class="h6 mb-0">Chocofan1</span>
+                                    </div>
+                                    <p>
+                                    This chocolate is amazing!
+                                    </p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="mr-2">
+                                            <button class="btn btn-sm btn-outline-primary">Reply</button>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="icon-thumbs-up"></i>&nbsp;(2)</button>
+                                        </div>
+                                        <small class="text-muted">17th Dec 2022 • 10:15am</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                *@
+
+            </div>
+            <!--end of col-->
+    <div class="col-12 col-md-4">
+        <!-- end card -->
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div><i class="icon-text-document mr-1"></i>Added</div>
+                        <span>17/12/2023</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div><i class="icon-edit mr-1"></i> Last updated</div>
+                        <span>23/12/2023</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div><i class="icon-thumbs-up mr-1"></i> Company</div>
+                        <span>@Model.Company</span>
+                    </div>
+                </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div><i class="icon-thumbs-up mr-1"></i> Buy</div>
+                                <span></span>
+                            </div>
+                        </li>
+               
+            </ul>
+        </div>
+        <!-- end card -->
+    </div>
+            <!--end of col-->
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
