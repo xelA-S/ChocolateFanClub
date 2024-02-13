@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 using System.Net;
 
-namespace RunGroopWebApp.Data
+namespace ChocolateFanClub.Data
 {
     // if there is no data present, this is the default data which will be entered
     public class Seed

@@ -120,7 +120,7 @@ namespace ChocolateFanClub.Controllers
             //    ChocolateImageUrl = photoResult.Url.ToString(),
             //    Company = chocoVM.Company
             //};
-            _chocolateRepository.Update(chocoVM);
+            await _chocolateRepository.Update(chocoVM);
             return RedirectToAction("Index");
             }
             else
