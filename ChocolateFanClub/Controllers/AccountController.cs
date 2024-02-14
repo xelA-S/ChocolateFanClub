@@ -14,13 +14,12 @@ namespace ChocolateFanClub.Controllers
         // manager class provides extensions and code to handle authentication controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        private readonly ApplicationDBContext _context;
+        
         // adding in the parameters which relate to the above classes is called dependency injection
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ApplicationDBContext context)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _context = context;
         }
         public IActionResult Login()
         {

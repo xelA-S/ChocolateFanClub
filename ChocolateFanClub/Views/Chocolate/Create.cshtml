@@ -16,15 +16,15 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Rating" class="form-label">Club Category</label>
+        <label asp-for="Rating" class="form-label">Rating</label>
         <select asp-for="Rating" asp-items="@Html.GetEnumSelectList<Rating>()" class="form-control form-control-lg">
-            <option>--Select--</option>
+            <option>Select</option>
         </select>
         <span asp-validation-for="Rating" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Tasty.IsTasty" class="form-label">Street</label>
-        <input asp-for="Tasty.IsTasty" class="form-control" aria-describedby="emailHelp" placeholder="IsTasty">
+        <label asp-for="Tasty.IsTasty" class="form-label">Tasty</label>
+        <input asp-for="Tasty.IsTasty" class="form-control" aria-describedby="emailHelp" placeholder="Tasty?">
         <span asp-validation-for="Tasty.IsTasty" class="text-danger"></span>
     </div>
     <div class="mb-3">
